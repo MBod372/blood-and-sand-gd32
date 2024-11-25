@@ -633,7 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7532f20345d664ba326d186d01537a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 0
+  playerHealth: 100
 --- !u!1 &204974822
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,7 +997,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fe3f69be9de34418b91252e6657816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageManager: {fileID: 2140306621}
   Player: {fileID: 162687642}
+  damageAmount: 10
+  attackTimer: 0
+  attackDelay: 3
 --- !u!54 &227609678
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10954,6 +10958,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!1 &2140306621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2140306623}
+  - component: {fileID: 2140306622}
+  m_Layer: 0
+  m_Name: damageManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2140306622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140306621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86579772d06c5ca4792c30e8dbf5b19b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageMultiplier: 1
+--- !u!4 &2140306623
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140306621}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.287876, y: -4.9783297, z: -1.509179}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5139920697761897737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11010,7 +11059,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6042454026771322897, guid: 1a587e2c83e7f2e488911f9201c23cf1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -11177,3 +11227,4 @@ SceneRoots:
   - {fileID: 1024105678}
   - {fileID: 5139920697761897737}
   - {fileID: 227609682}
+  - {fileID: 2140306623}
