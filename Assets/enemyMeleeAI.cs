@@ -32,6 +32,7 @@ public class enemyMeleeAI : MonoBehaviour
             dealDamage();
             if(Player.GetComponent<PlayerHealth>().playerHealth <= 0)
             {
+                Cursor.lockState = CursorLockMode.None;
                 SceneManager.LoadScene(3);
             }
                     
